@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="medicalPrescriptionSystem2.2:war">
+    <output-path>$PROJECT_DIR$/medicalPrescriptionSystem2.2/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>medicalPrescriptionSystem2.2</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="medicalPrescriptionSystem2.2-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="medicalPrescriptionSystem2.2:war exploded" />
+    </root>
+  </artifact>
+</component>
