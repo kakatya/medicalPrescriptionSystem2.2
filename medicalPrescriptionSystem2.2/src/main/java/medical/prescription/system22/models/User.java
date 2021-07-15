@@ -9,9 +9,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer user_id;
     private String name;
-    private String email;
     private String password;
-
+    private Boolean active;
     @ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
@@ -43,13 +42,6 @@ public class User {
         return roles.contains(Roles.PHARMACIST);
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public Set<Roles> getRoles() {
         return roles;
@@ -81,5 +73,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

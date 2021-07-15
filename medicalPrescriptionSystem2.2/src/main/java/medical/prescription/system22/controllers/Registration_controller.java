@@ -8,23 +8,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class Registration_controller {
-    @Autowired
-    private User_repo userRepo;
+    private final User_repo userRepo;
+
+    public Registration_controller(User_repo userRepo) {
+        this.userRepo = userRepo;
+    }
+
     @GetMapping("/openRegistrationAdminPage")
     public String openRegistrationAdminPage (){
-        return "registrationAdmin";
+        return "registrationAdminPage";
     }
-    @PostMapping
-    public String addNewAdmin(User user){
-        User userFromDB = userRepo.findByEmailAndName(user.getEmail(),user.getName());
-        if(userFromDB != null)
-            return "registrationAdmin";
-        user.getRoles().add(Roles.ADMIN);
+   @PostMapping("/openRegistrationAdminPage")
+    public String addNewAdmin(User user, Map<String, Object> model){
+        User userFromDB = userRepo.findByName(user.getName());
+        if(userFromDB != null){return "registrationAdminPage";}
+        user.setRoles(Collections.singleton(Roles.ADMIN));
+        user.setActive(true);
         userRepo.save(user);
-        return "redirect:/loginAdmin";
+        return "redirect:/openLoginAdminPage";
     }
 }

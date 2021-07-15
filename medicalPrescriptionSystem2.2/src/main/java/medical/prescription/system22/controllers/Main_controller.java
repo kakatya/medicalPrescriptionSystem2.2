@@ -8,16 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Main_controller {
-    @Autowired
-    private User_repo userRepo;
+
 
     @GetMapping("/")
     public String open_main_page (Model model){
-        return "main_page";
+        return "mainPage";
     }
-    @GetMapping("/openLoginAdminPage")
-    public String openLoginAdminPage(){
-        return "loginAdmin";
-    }
-
 }
