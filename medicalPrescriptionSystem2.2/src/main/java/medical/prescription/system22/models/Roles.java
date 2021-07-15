@@ -1,8 +1,16 @@
 package medical.prescription.system22.models;
 
-public enum Roles {
+import org.springframework.security.core.GrantedAuthority;
+
+public enum Roles implements GrantedAuthority {
     ADMIN,
     DOCTOR,
     PATIENT,
-    PHARMACIST
+    PHARMACIST;
+
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }

@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
-        registry.addViewController("/openLoginAdminPage").setViewName("loginAdminPage");
+        registry.addViewController("/loginAdminPage").setViewName("loginAdminPage");
     }
 }

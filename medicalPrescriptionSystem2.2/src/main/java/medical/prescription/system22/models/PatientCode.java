@@ -3,20 +3,20 @@ package medical.prescription.system22.models;
 import javax.persistence.*;
 
 @Entity
-public class Patient_code {
+public class PatientCode {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id")
     private User user;
     private String code;
 
-    public Patient_code(User user) {
+    public PatientCode(User user) {
         this.user = user;
     }
 
-    public Patient_code() {
+    public PatientCode() {
     }
 
     public String getCode() {

@@ -1,13 +1,17 @@
 package medical.prescription.system22.models;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer user_id;
+    private Integer id;
     private String name;
     private String password;
     private Boolean active;
@@ -25,20 +29,49 @@ public class User {
 
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
 
-    public boolean is_admin(){
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return getActive();
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    public boolean isAdmin(){
         return roles.contains(Roles.ADMIN);
     }
 
-    public boolean is_doctor(){
+    public boolean isDoctor(){
         return roles.contains(Roles.DOCTOR);
     }
 
-    public boolean is_patient(){
+    public boolean isPatient(){
         return roles.contains(Roles.PATIENT);
     }
 
-    public boolean is_pharmacist(){
+    public boolean isPharmacist(){
         return roles.contains(Roles.PHARMACIST);
     }
 
@@ -51,12 +84,12 @@ public class User {
         this.roles = roles;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setId(Integer user_id) {
+        this.id = id;
     }
 
     public String getName() {
