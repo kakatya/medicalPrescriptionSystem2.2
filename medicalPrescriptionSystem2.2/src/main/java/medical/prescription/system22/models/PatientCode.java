@@ -4,34 +4,27 @@ import javax.persistence.*;
 
 @Entity
 public class PatientCode {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     @OneToOne
     @JoinColumn(name = "id")
     private User user;
     private String code;
 
-    public PatientCode(User user) {
+    public PatientCode(User user, String code) {
         this.user = user;
+        this.code = code;
     }
 
     public PatientCode() {
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,5 +34,13 @@ public class PatientCode {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

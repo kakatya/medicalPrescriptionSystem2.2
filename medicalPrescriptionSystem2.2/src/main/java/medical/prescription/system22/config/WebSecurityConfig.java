@@ -17,17 +17,16 @@ import javax.sql.DataSource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private UserService userService;
+    private DataSource dataSource;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.
-        csrf().disable()
+        http
                 .authorizeRequests()
                 .antMatchers("/", "/openRegistrationAdminPage","/registrationAdmin").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/loginAdminPage")
+                .loginPage("/login")
                 .permitAll()
                 .and( )
                 .logout()
@@ -37,7 +36,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService)
-                .passwordEncoder(NoOpPasswordEncoder.getInstance());
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
+                .passwordEncoder(NoOpPasswordEncoder.getInstance())
+                .usersByUsernameQuery("select username,password, active from user where username=?")
+                .authoritiesByUsernameQuery("select u.username, ur.roles from user u inner join user_role ur on u.id = ur.user_id where u.username=?");
     }
 }

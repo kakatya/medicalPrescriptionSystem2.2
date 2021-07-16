@@ -11,10 +11,9 @@
 
     </div>
     <form action="/registrationAdmin" method="post">
-
-        <input type="text" name="name" placeholder="User name"/>
-        <input type="password" name="password" placeholder="User password"/>
-
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+       <div><input type="text" name="username" placeholder="User name"/></div>
+        <div><input type="password" name="password" placeholder="User password"/></div>
         <button type="submit">Add new Admin</button>
     </form>
 </div>
