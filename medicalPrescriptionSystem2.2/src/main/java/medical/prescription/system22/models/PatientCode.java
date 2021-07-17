@@ -7,8 +7,8 @@ public class PatientCode {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     private User user;
     private String code;
 

@@ -8,7 +8,7 @@ public class PatientPrescription {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "code_id")
     private PatientCode patientCode;
 
     public PatientPrescription(PatientCode patientCode) {

@@ -32,23 +32,6 @@ public class RegistrationController {
         userRepo.save(user);
         return "redirect:/login";
     }
-    @PostMapping("/registrationDoctor")
-    public String addNewDoctor(User user, Map<String, Object> model){
-        User userFromDB = userRepo.findByUsername(user.getUsername());
-        if(userFromDB != null){return "adminTools";}
-        user.setRoles(Collections.singleton(Roles.DOCTOR));
-        user.setActive(true);
-        userRepo.save(user);
-        return "redirect:/adminTools";
-    }
-    @PostMapping("/registrationPharmacist")
-    public String addNewPharmacist(User user, Map<String, Object> model){
-        User userFromDB = userRepo.findByUsername(user.getUsername());
-        if(userFromDB != null){return "adminTools";}
-        user.setRoles(Collections.singleton(Roles.PHARMACIST));
-        user.setActive(true);
-        userRepo.save(user);
-        return "redirect:/adminTools";
-    }
+
 
 }

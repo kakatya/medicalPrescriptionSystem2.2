@@ -4,7 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,9 +31,22 @@ public class User implements UserDetails {
 
     }
 
+    public boolean isAdmin(){
+        return roles.contains(Roles.ADMIN);
+    }
+
+    public boolean isDoctor(){
+        return roles.contains(Roles.DOCTOR);
+    }
+    public boolean isPharmacist(){
+        return roles.contains(Roles.PHARMACIST);
+    }
+    public boolean isPatient(){
+        return roles.contains(Roles.PATIENT);
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return getRoles();
     }
 
     @Override
@@ -59,21 +74,7 @@ public class User implements UserDetails {
         return true;
     }
 
-    public boolean isAdmin(){
-        return roles.contains(Roles.ADMIN);
-    }
 
-    public boolean isDoctor(){
-        return roles.contains(Roles.DOCTOR);
-    }
-
-    public boolean isPatient(){
-        return roles.contains(Roles.PATIENT);
-    }
-
-    public boolean isPharmacist(){
-        return roles.contains(Roles.PHARMACIST);
-    }
 
     public Integer getId() {
         return id;

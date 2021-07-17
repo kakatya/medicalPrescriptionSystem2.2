@@ -8,10 +8,8 @@
 <body>
 <div>
     <form action="/login" method="post">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
        <div> <input type="text" name="username" placeholder="User's name"/></div>
        <div> <input type="password" name="password" placeholder="User's password"/></div>
-
         <button type="submit"> Login</button>
     </form>
 </div>
