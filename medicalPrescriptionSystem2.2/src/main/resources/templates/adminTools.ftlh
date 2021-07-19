@@ -3,7 +3,7 @@
 <h1>Hello admin!</h1>
     <div class="form-registration f1">
         <form method="post" action="/registrationDoctor">
-            <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <img class="mb-4" src="" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Регистрация доктора</h1>
 
             <div class="form-floating">
