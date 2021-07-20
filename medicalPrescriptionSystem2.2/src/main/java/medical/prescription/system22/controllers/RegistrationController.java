@@ -30,7 +30,7 @@ public class RegistrationController {
         user.setRoles(Collections.singleton(Roles.ADMIN));
         user.setActive(true);
         userRepo.save(user);
-        return "redirect:/login";
+        return "main";
     }
 
 

@@ -5,13 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Title</title>
     <style>
         .formPrescip{
             width: 100%;
             max-width: 500px;
             padding: 50px;
 
+        }
+        .form-floating{
+           padding-top: 15px;
         }
         .form-registration {
             width: 100%;
@@ -24,7 +28,7 @@
         }
         .f2{
             margin-left: 700px;
-            margin-top: -330px;
+            margin-top: -350px;
         }
         .form-inline {
             display: -webkit-box;
@@ -37,9 +41,26 @@
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;}
+        .tr{
+            width: 50%;
+            margin-left: 40%;
+            margin-top: -1080px;
+        }
+        .ttt{
+            width: 50%;
+            margin-left: 40%;
+            margin-top: -25px;
+        }
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+            margin-top: -65px;
+        }
 
     </style>
-    <title>Title</title>
 </head>
 <body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

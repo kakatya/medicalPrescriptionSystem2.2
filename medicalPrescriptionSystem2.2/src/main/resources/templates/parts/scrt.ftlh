@@ -1,12 +1,12 @@
 <#assign known=Session.SPRING_SECURITY_CONTEXT??>
 <#if  known>
     <#assign
-    user = Session.SPRING_SECURITY_CONTEXT.authentication.principal
-    name = user.getUsername()
-    isAdmin = user.isAdmin()
-    isDoctor = user.isDoctor()
-    isPatient = user.isPatient()
-    isPharmacist = user.isPharmacist()
+    userr = Session.SPRING_SECURITY_CONTEXT.authentication.principal
+    name = userr.getUsername()
+    isAdmin = userr.isAdmin()
+    isDoctor = userr.isDoctor()
+    isPatient = userr.isPatient()
+    isPharmacist = userr.isPharmacist()
     >
 
 <#else>

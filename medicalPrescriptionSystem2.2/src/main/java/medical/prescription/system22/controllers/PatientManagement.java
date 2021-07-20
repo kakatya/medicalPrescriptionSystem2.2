@@ -35,6 +35,9 @@ public class PatientManagement {
         PatientCode patientCodeFromDB = patientCodeRepo.findByUser(user);
         if (patientCodeFromDB != null)
             model.addAttribute("patientCode", patientCodeFromDB);
+        List<PatientPrescription>  patientPrescriptions;
+        patientPrescriptions = prescriptionRepo.findByPatient(user);
+        model.addAttribute("patientPrescriptions",patientPrescriptions);
         return "patientManagement";
     }
 
@@ -45,7 +48,7 @@ public class PatientManagement {
         PatientCode patientCodeFromDB = patientCodeRepo.findByCode(code);
         if (patientCodeFromDB != null) {
             model.addAttribute("message", "код уже существует");
-            return "patientManagement";
+            return "doctorTools";
         }
         PatientCode patientCode = new PatientCode();
         patientCode.setCode(code);
@@ -76,10 +79,7 @@ public class PatientManagement {
         patientPrescription.setEndDAte(dateEnd);
         patientPrescription.setDoctorName(doctor);
         prescriptionRepo.save(patientPrescription);
-        System.out.println(doctor);
-        List<PatientPrescription>  patientPrescriptions = new ArrayList<>();
-        patientPrescriptions = prescriptionRepo.findByPatient(userRepo.findByUsername(username));
-        model.addAttribute("patientPrescriptions",patientPrescriptions);
+
         return "doctorTools";
     }
 }
