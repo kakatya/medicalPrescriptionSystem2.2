@@ -9,7 +9,7 @@
 <@nav.page>
     <div class="container">
         <form class="form-inline mt-2 mt-md-0" method="get" action="/openDoctorTools">
-            <input class="form-control mr-sm-2" type="text" name="username"  placeholder="Введите код" aria-label="Search">
+            <input class="form-control mr-sm-2" type="text" name="username"  placeholder="Поиск пациента" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Искать</button>
         </form>
         </div>
@@ -40,7 +40,7 @@
 
                 <div class="form-floating">
                     <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Иванов Иван Иванович">
-                    <label for="floatingInput">Имя пациента</label>
+                    <label for="floatingInput">ФИО пациента</label>
                 </div>
                 <div class="form-floating">
                     <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Пароль">

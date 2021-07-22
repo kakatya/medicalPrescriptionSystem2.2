@@ -25,7 +25,9 @@ public class DoctorToolsController {
     @Autowired
     PatientCodeRepo patientCodeRepo;
     @GetMapping("/openDoctorTools")
-    public String openDoctorToolsPage(@RequestParam(required = false, defaultValue = "")  String username, Model model){
+    public String openDoctorToolsPage(
+            @RequestParam(required = false, defaultValue = "")  String username,
+                                      Model model){
 
         if (username != null && !username.isEmpty()) {
             User user = userRepo.findByUsername(username);

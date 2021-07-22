@@ -7,8 +7,9 @@
         <div><h2>Код пациента: ${patientCode.getCode()}</h2></div>
         <div class="formPrescip table-sub-heading-color" style="align-content: center">
             <form method="post" class="tex-center" action="/patienntManeg/{user}/addPrst">
+                <h2>Форма рецепта</h2>
                     <div class="form-floating  "  >
-                        <label for="username" class="  mt-0"  style="display: inline-block">Имя пациента</label>
+                        <label for="username" class="  mt-0"  style="display: inline-block">ФИО пациента</label>
                         <input  type="text" class="form-control" name="username" value="${user.getUsername()}" id="username" placeholder="YHGFRR">
                     </div>
                     <div class="form-floating " style="margin-top: 50px">
@@ -20,7 +21,7 @@
                         <input type="date" class="form-control" id="birthday" name="birthday">
                     </div>
                     <div class="form-floating" style="margin-top: 50px">
-                        <label for="placeOfBirth"> Место рождения</label>
+                        <label for="placeOfBirth"> Место жительства</label>
                         <input type="text" name="placeOfBirth" class="form-control" id="placeOfBirth">
                     </div>
                     <div class="form-floating" style="margin-top: 50px">
@@ -40,7 +41,7 @@
                         <label for="doctor"> Лечащий врач</label>
                         <input type="text" name="doctor" value="${name}" class="form-control" id="doctor">
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Добавить</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Добавить рецепт</button>
 
             </form>
         </div>
@@ -54,7 +55,7 @@
                 </div>
                 <div class="form-floating">
                     <input type="text" class="form-control" name="username" value="${user.getUsername()}" id="floatingInputa" placeholder="YHGFRR">
-                    <label for="floatingInputa">Имя пациента</label>
+                    <label for="floatingInputa">ФИО пациента</label>
 
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Добавить</button>
@@ -70,6 +71,7 @@
                     Проживающему по адресу <b>${patientPrescriptions.getPlaceOfBirth()}</b>.<br>
                     Дата назначения: <b>${patientPrescriptions.getStartDate()}</b><br>
                     Рецепт действует по: <b>${patientPrescriptions.getEndDAte()}</b><br>
+                    Назначил врач: <b>${name}</b>
                 </div>
             </#list>
         <#else >

@@ -22,7 +22,7 @@ public class AdminToolsController {
         model.put("navs",navAdmin());
         return "adminTools";
     }
-    @PostMapping("/registrationDoctor")
+    @PostMapping("/registrationDoctor") /*Регистрация врача*/
     public String addNewDoctor(User user, Map<String, Object> model){
         User userFromDB = userRepo.findByUsername(user.getUsername());
         if(userFromDB != null){return "adminTools";}
@@ -35,7 +35,7 @@ public class AdminToolsController {
         List<String> navs = new ArrayList<>();
         return "/openAdminTools";
     }
-    @PostMapping("/registrationPharmacist")
+    @PostMapping("/registrationPharmacist") /*Регистрация фармацевта*/
     public String addNewPharmacist(User user, Map<String, Object> model){
         User userFromDB = userRepo.findByUsername(user.getUsername());
         if(userFromDB != null){return "adminTools";}

@@ -7,7 +7,7 @@
 
             <div class="form-floating">
                 <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Иванов Иван Иванович">
-                <label for="floatingInput">Имя доктора</label>
+                <label for="floatingInput">ФИО доктора</label>
             </div>
             <div class="form-floating">
                 <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Пароль">
@@ -36,7 +36,7 @@
 
             <div class="form-floating">
                 <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Иванов Иван Иванович">
-                <label for="floatingInput">Имя фармацевта</label>
+                <label for="floatingInput">ФИО фармацевта</label>
             </div>
             <div class="form-floating">
                 <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Пароль">

@@ -6,14 +6,16 @@
             <h1 class="display-4 fw-normal">Будущее уже сегодня</h1>
             <a name="inform"></a>
             <p class="lead fw-normal">Система оборота медицинских рецептов - это современный способ назначения и приобретения  лекарств.</p>
-            <#if !known>
+            <#if !known> <!--Если пользователь не авторизован, вывести ссылку на форму для входа-->
                 <a class="btn btn-outline-secondary" href="#logForm">Войти в систему</a>
             </#if>
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
-    <div class="b-example-divider"></div>
+    <div class="b-example-divider"><footer style="position:relative;  left: 0; bottom: 0;">
+            <div class="b-example-divider"><b>&copy; Акуленко Екатерина +7900568744</b></div>
+        </footer></div>
     <#if !known>
         <div class="container">
             <div class="form-registration crow justify-content-center align-items-center mt-5 ml-5" style=" margin-left: 40%">
@@ -24,7 +26,7 @@
 
                     <div class="form-floating">
                         <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Иванов Иван Иванович">
-                        <label for="floatingInput">Имя</label>
+                        <label for="floatingInput">ФИО</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Пароль">
@@ -36,4 +38,5 @@
         </div>
 
     </#if>
+
 </@nav.page>

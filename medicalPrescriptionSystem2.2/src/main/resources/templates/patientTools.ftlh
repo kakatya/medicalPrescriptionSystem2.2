@@ -17,6 +17,7 @@
                     Проживающему по адресу <b>${p.getPlaceOfBirth()}</b>.<br>
                     Дата назначения: <b>${p.getStartDate()}</b><br>
                     Рецепт действует по: <b>${p.getEndDAte()}</b><br>
+                    Назначил врач: <b>${p.getDoctorName()}</b>
                 </div>
             </#list>
         <#else >
